@@ -1,0 +1,2 @@
+# Requirements for 2-bit ALU Simulator
+# Basic Python packages for the simulator and visualizer

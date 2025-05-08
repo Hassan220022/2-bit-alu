@@ -63,14 +63,9 @@ For a 2-bit number, the 2's complement is:
 - 2's complement of 2 (10) is 2 (10)
 - 2's complement of 3 (11) is 1 (01)
 
-```mermaid
-graph TD
-    subgraph "2's Complement Conversion"
-        A[Original Number] --> B[Invert All Bits]
-        B --> C[Add 1]
-        C --> D[2's Complement Result]
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ## Design Methodology
 
@@ -87,55 +82,9 @@ Our ALU design follows a standard architecture with:
 
 The high-level block diagram of our ALU is as follows:
 
-```mermaid
-graph TD
-    subgraph Inputs
-        A[A1:A0] 
-        B[B1:B0]
-        S[S1:S0]
-    end
-
-    subgraph "Internal Logic"
-        AND[AND Logic]
-        OR[OR Logic]
-        XOR[XOR Logic]
-        ADD[ADD Logic]
-        SUB[SUB Logic]
-        NOT[NOT Logic]
-        MUX[Operation Selector]
-    end
-
-    subgraph Outputs
-        R[Result1:Result0]
-        C[Carry/Borrow]
-    end
-
-    A --> AND
-    A --> OR
-    A --> XOR
-    A --> ADD
-    A --> SUB
-    A --> NOT
-
-    B --> AND
-    B --> OR
-    B --> XOR
-    B --> ADD
-    B --> SUB
-
-    S --> MUX
-
-    AND --> MUX
-    OR --> MUX
-    XOR --> MUX
-    ADD --> MUX
-    SUB --> MUX
-    NOT --> MUX
-
-    MUX --> R
-    ADD --> C
-    SUB --> C
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ### Logic Design
 
@@ -148,33 +97,9 @@ For each operation, we designed the appropriate logic circuits:
 5. **Subtraction**: Implementation using 2's complement and adders
 6. **NOT Operation**: Direct implementation using NOT gates
 
-```mermaid
-graph TD
-    subgraph "Half Adder"
-        A1[A] --> XOR1[XOR]
-        B1[B] --> XOR1
-        A1 --> AND1[AND]
-        B1 --> AND1
-        XOR1 --> S[Sum]
-        AND1 --> C[Carry]
-    end
-
-    subgraph "Full Adder"
-        A2[A] --> XOR2[XOR]
-        B2[B] --> XOR2
-        XOR2 --> XOR3[XOR]
-        Cin[Carry In] --> XOR3
-        XOR3 --> Sum[Sum]
-        
-        A2 --> AND2[AND]
-        B2 --> AND2
-        XOR2 --> AND3[AND]
-        Cin --> AND3
-        AND2 --> OR1[OR]
-        AND3 --> OR1
-        OR1 --> Cout[Carry Out]
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ### Component Selection
 
@@ -197,70 +122,24 @@ These components were chosen for:
 #### Circuit Design
 
 ##### AND Operation Circuit
-```mermaid
-graph LR
-    A1[A1] --> AND1[AND]
-    B1[B1] --> AND1
-    AND1 --> R1[Result1]
-    
-    A0[A0] --> AND0[AND]
-    B0[B0] --> AND0
-    AND0 --> R0[Result0]
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ##### OR Operation Circuit
-```mermaid
-graph LR
-    A1[A1] --> OR1[OR]
-    B1[B1] --> OR1
-    OR1 --> R1[Result1]
-    
-    A0[A0] --> OR0[OR]
-    B0[B0] --> OR0
-    OR0 --> R0[Result0]
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ##### XOR Operation Circuit
-```mermaid
-graph LR
-    A1[A1] --> XOR1[XOR]
-    B1[B1] --> XOR1
-    XOR1 --> R1[Result1]
-    
-    A0[A0] --> XOR0[XOR]
-    B0[B0] --> XOR0
-    XOR0 --> R0[Result0]
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ##### 2-Bit Addition Circuit
-```mermaid
-graph TD
-    A0[A0] --> XOR1[XOR]
-    B0[B0] --> XOR1
-    XOR1 --> S0[Sum0]
-    
-    A0 --> AND1[AND]
-    B0 --> AND1
-    AND1 --> C0[Carry0]
-    
-    A1[A1] --> XOR2[XOR]
-    B1[B1] --> XOR2
-    XOR2 --> XOR3[XOR]
-    C0 --> XOR3
-    XOR3 --> S1[Sum1]
-    
-    A1 --> AND2[AND]
-    B1 --> AND2
-    A1 --> AND3[AND]
-    C0 --> AND3
-    B1 --> AND4[AND]
-    C0 --> AND4
-    
-    AND2 --> OR1[OR]
-    AND3 --> OR1
-    AND4 --> OR1
-    OR1 --> Cout[Carry Out]
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 #### Component List
 
@@ -318,7 +197,7 @@ def alu_and(a, b):
     result[0] = a[0] & b[0]
     result[1] = a[1] & b[1]
     return result
-```
+<pre style="font-family: monospace; white-space: pre;">
 
 #### GUI Visualizer
 
@@ -341,16 +220,9 @@ We tested our ALU implementation using:
 2. **Edge cases**: Special focus on carry and borrow conditions
 3. **Software validation**: Comparing hardware results with software simulation
 
-```mermaid
-graph TD
-    A[Design Circuit] --> B[Software Simulation]
-    B --> C[Hardware Implementation]
-    C --> D[Hardware Testing]
-    D --> E{Results Match?}
-    E -->|No| F[Debug & Fix]
-    F --> D
-    E -->|Yes| G[Documentation]
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ### Test Results
 
@@ -500,7 +372,7 @@ For detailed circuit diagrams, see the [circuit implementation guide](../hardwar
 
 ### Appendix B: Source Code
 
-```python
+</pre>python
 # ALU simulator implementation (excerpt)
 
 def alu_operation(a, b, op_select):

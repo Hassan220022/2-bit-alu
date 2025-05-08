@@ -13,16 +13,9 @@ An Arithmetic Logic Unit (ALU) is a fundamental component of any CPU, responsibl
 - Subtraction using 2's complement
 - NOT (1's complement)
 
-```mermaid
-graph TD
-    subgraph "ALU Block Diagram"
-        A[Input A] --> ALU
-        B[Input B] --> ALU
-        S[Operation Select] --> ALU
-        ALU --> R[Result]
-        ALU --> C[Carry/Borrow]
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ## Project Contents
 
@@ -58,27 +51,27 @@ graph TD
 ### Installation
 
 1. Clone this repository:
-   ```
+   <pre style="font-family: monospace; white-space: pre;">
    git clone https://github.com/yourusername/2-bit-alu.git
    cd 2-bit-alu
-   ```
+   </pre>
 
 2. Install required dependencies:
-   ```
+   <pre style="font-family: monospace; white-space: pre;">
    pip install -r requirements.txt
-   ```
+   </pre>
 
 ### Running the Simulator
 
 1. Run the command-line simulator:
-   ```
+   <pre style="font-family: monospace; white-space: pre;">
    python src/alu_simulator.py
-   ```
+   </pre>
 
 2. Run the GUI visualizer:
-   ```
+   <pre style="font-family: monospace; white-space: pre;">
    python src/alu_visualizer.py
-   ```
+   </pre>
 
 ### Building the Hardware
 
@@ -90,17 +83,9 @@ The basic steps are:
 3. Wire the logic gates according to the operation implementation diagrams
 4. Connect the output LEDs through current-limiting resistors
 
-```mermaid
-graph TD
-    subgraph "Basic Hardware Assembly Workflow"
-        A[Set Up Power] --> B[Mount ICs on Breadboard]
-        B --> C[Wire Input Switches]
-        C --> D[Connect Logic Gates]
-        D --> E[Add Multiplexer Logic]
-        E --> F[Connect Output LEDs]
-        F --> G[Test Each Operation]
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ## Operation Codes
 
@@ -116,37 +101,31 @@ The ALU uses a 2-bit operation selector:
 ## Example Operations
 
 ### AND Operation Example
-```
+<pre style="font-family: monospace; white-space: pre;">
 A = 10 (binary)
 B = 11 (binary)
 Result = 10 (binary)
-```
+</pre>
 
 ### Addition Example
-```
+<pre style="font-family: monospace; white-space: pre;">
 A = 10 (binary, decimal 2)
 B = 01 (binary, decimal 1)
 Result = 11 (binary, decimal 3)
-```
+</pre>
 
 ### Subtraction Example
-```
+<pre style="font-family: monospace; white-space: pre;">
 A = 11 (binary, decimal 3)
 B = 01 (binary, decimal 1)
 Result = 10 (binary, decimal 2)
-```
+</pre>
 
 ## Circuit Diagram
 
-```mermaid
-graph LR
-    subgraph "Simplified Circuit"
-        A[Inputs A/B] --> OPS["Operation Circuits<br/>(AND/OR/XOR/NOT)"]
-        OPS --> MUX[Multiplexer]
-        S[Op Select] --> MUX
-        MUX --> R[Result]
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 For detailed circuit diagrams, see `hardware_design/circuit_implementation.md`.
 

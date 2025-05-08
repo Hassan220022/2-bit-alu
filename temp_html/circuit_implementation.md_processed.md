@@ -28,7 +28,7 @@ This comprehensive guide will walk you through building a functional 2-bit ALU u
 ## IC Pin Configurations
 
 ### 7408 (Quad AND Gates)
-```
+<pre style="font-family: monospace; white-space: pre;">
     VCC  4B  4A  4Y  3B  3A  3Y
      14  13  12  11  10   9   8
     ┌────┬───┬───┬───┬───┬───┬────┐
@@ -38,10 +38,10 @@ This comprehensive guide will walk you through building a functional 2-bit ALU u
     └────┬───┬───┬───┬───┬───┬────┘
       1   2   3   4   5   6   7
      1A  1B  1Y  2A  2B  2Y  GND
-```
+</pre>
 
 ### 7432 (Quad OR Gates)
-```
+<pre style="font-family: monospace; white-space: pre;">
     VCC  4B  4A  4Y  3B  3A  3Y
      14  13  12  11  10   9   8
     ┌────┬───┬───┬───┬───┬───┬────┐
@@ -51,10 +51,10 @@ This comprehensive guide will walk you through building a functional 2-bit ALU u
     └────┬───┬───┬───┬───┬───┬────┘
       1   2   3   4   5   6   7
      1A  1B  1Y  2A  2B  2Y  GND
-```
+</pre>
 
 ### 7486 (Quad XOR Gates)
-```
+<pre style="font-family: monospace; white-space: pre;">
     VCC  4B  4A  4Y  3B  3A  3Y
      14  13  12  11  10   9   8
     ┌────┬───┬───┬───┬───┬───┬────┐
@@ -64,10 +64,10 @@ This comprehensive guide will walk you through building a functional 2-bit ALU u
     └────┬───┬───┬───┬───┬───┬────┘
       1   2   3   4   5   6   7
      1A  1B  1Y  2A  2B  2Y  GND
-```
+</pre>
 
 ### 7404 (Hex Inverter)
-```
+<pre style="font-family: monospace; white-space: pre;">
     VCC  6A  6Y  5A  5Y  4A  4Y
      14  13  12  11  10   9   8
     ┌────┬───┬───┬───┬───┬───┬────┐
@@ -77,85 +77,13 @@ This comprehensive guide will walk you through building a functional 2-bit ALU u
     └────┬───┬───┬───┬───┬───┬────┘
       1   2   3   4   5   6   7
      1A  1Y  2A  2Y  3A  3Y  GND
-```
+</pre>
 
 ## Full Circuit Diagram
 
-```mermaid
-graph TD
-    subgraph Inputs
-        A1[A1]
-        A0[A0]
-        B1[B1]
-        B0[B0]
-        S1[S1]
-        S0[S0]
-    end
-    
-    subgraph "AND Operation"
-        AND1[AND Gate]
-        AND0[AND Gate]
-        A1 --> AND1
-        B1 --> AND1
-        A0 --> AND0
-        B0 --> AND0
-    end
-    
-    subgraph "OR Operation"
-        OR1[OR Gate]
-        OR0[OR Gate]
-        A1 --> OR1
-        B1 --> OR1
-        A0 --> OR0
-        B0 --> OR0
-    end
-    
-    subgraph "XOR/ADD Operation"
-        XOR1[XOR Gate]
-        XOR0[XOR Gate]
-        CARRY[AND/OR for Carry]
-        A1 --> XOR1
-        B1 --> XOR1
-        A0 --> XOR0
-        B0 --> XOR0
-        A0 --> CARRY
-        B0 --> CARRY
-        CARRY --> XOR1
-    end
-    
-    subgraph "NOT/SUB Operation"
-        NOT_B1[NOT Gate]
-        NOT_B0[NOT Gate]
-        B1 --> NOT_B1
-        B0 --> NOT_B0
-        NOT_B1 --> XOR1
-        NOT_B0 --> XOR0
-    end
-    
-    subgraph "Multiplexer"
-        MUX1[MUX for Bit 1]
-        MUX0[MUX for Bit 0]
-        AND1 --> MUX1
-        OR1 --> MUX1
-        XOR1 --> MUX1
-        AND0 --> MUX0
-        OR0 --> MUX0
-        XOR0 --> MUX0
-        S1 --> MUX1
-        S0 --> MUX1
-        S1 --> MUX0
-        S0 --> MUX0
-    end
-    
-    subgraph Outputs
-        R1[Result Bit 1]
-        R0[Result Bit 0]
-        C[Carry/Borrow]
-        MUX1 --> R1
-        MUX0 --> R0
-        CARRY --> C
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ## Step-by-Step Assembly Instructions
 
@@ -166,19 +94,9 @@ graph TD
 3. Connect pin 7 of all ICs to the ground rail
 4. Place one 0.1uF decoupling capacitor between +5V and GND near each IC
 
-```mermaid
-graph LR
-    subgraph "Power Connection"
-        P5V[+5V Power Rail] --> IC1P[7408 Pin 14]
-        P5V --> IC2P[7432 Pin 14]
-        P5V --> IC3P[7486 Pin 14]
-        P5V --> IC4P[7404 Pin 14]
-        IC1G[7408 Pin 7] --> GND[Ground Rail]
-        IC2G[7432 Pin 7] --> GND
-        IC3G[7486 Pin 7] --> GND
-        IC4G[7404 Pin 7] --> GND
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ### 2. Input Switch Wiring
 
@@ -195,13 +113,9 @@ graph LR
      - S1=1, S0=0: ADD
      - S1=1, S0=1: SUB
 
-```mermaid
-graph TD
-    subgraph "Switch Wiring Example (for one input)"
-        VCC[+5V] --> R[10kOhm Resistor] --> J[Junction Point] --> SW[SPDT Switch] --> GND[Ground]
-        J -- "Signal Output" --> IC[To IC Input]
-    end
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ### 3. Implement Basic Operations
 
@@ -277,10 +191,9 @@ For bit 0:
 2. Connect the result bit 0 through a 330Ohm resistor to an LED, then to ground
 3. Connect the carry/borrow output through a 330Ohm resistor to an LED, then to ground
 
-```mermaid
-graph LR
-    R[Result Signal] --> RES[330Ohm Resistor] --> LED[LED] --> GND[Ground]
-```
+<div style="background-color: #ffffd9; padding: 10px; border: 1px solid #e6e6b8; border-radius: 4px;">
+<em>Mermaid diagram removed for PDF compatibility</em>
+</div>
 
 ## Detailed Wiring Table
 

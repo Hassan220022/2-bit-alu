@@ -83,7 +83,7 @@ The high-level block diagram of our ALU is as follows:
                    │                 │
        A[1:0] ────►│                 │
                    │                 │
-       B[1:0] ────►│      ALU       │────► Result[1:0]
+       B[1:0] ────►│      ALU        │────► Result[1:0]
                    │                 │
 Op_Select[2:0] ───►│                 │────► Carry/Borrow
                    │                 │

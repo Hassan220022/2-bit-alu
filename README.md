@@ -91,14 +91,6 @@ A detailed project report is available in `docs/project_report.md` covering:
 - Testing procedures
 - Results analysis
 
-## Contributors
-
-List of team members and their contributions.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Acknowledgments
 
 - Course instructor and teaching assistants

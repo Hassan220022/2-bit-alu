@@ -105,4 +105,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - References and learning resources
 
 
-you can also use for the simulator https://claude.ai/public/artifacts/ea8579f5-8a7f-4332-8920-95c36823ea32
+you can also use for the [simulator](https://claude.ai/public/artifacts/ea8579f5-8a7f-4332-8920-95c36823ea32)

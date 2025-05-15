@@ -198,3 +198,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Course instructor and teaching assistants
 - Texas Instruments for 7400 series datasheets
 - Ben Eater's educational videos on digital logic
+https://claude.ai/public/artifacts/ea8579f5-8a7f-4332-8920-95c36823ea32
